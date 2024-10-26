@@ -49,15 +49,6 @@ public class BulletScript : MonoBehaviour
                 }
             }
 
-            SuicideBomberZombie suicideBomberZombie = other.gameObject.GetComponent<SuicideBomberZombie>();
-            if (suicideBomberZombie != null)
-            {
-                if (suicideBomberZombie.GetCurrentHP() > 0f)
-                {
-                    suicideBomberZombie.TakeDamage(dmg);
-                }
-            }
-
             RunnerZombie runnerZombie = other.gameObject.GetComponent<RunnerZombie>();
             if (runnerZombie != null)
             {
@@ -67,14 +58,6 @@ public class BulletScript : MonoBehaviour
                 }
             }
 
-            BossZombie bossZombie = other.gameObject.GetComponent<BossZombie>();
-            if (bossZombie != null)
-            {
-                if (bossZombie.GetCurrentHP() > 0f)
-                {
-                    bossZombie.TakeDamage(dmg);
-                }
-            }
             Destroy(this.gameObject);
         }
     }

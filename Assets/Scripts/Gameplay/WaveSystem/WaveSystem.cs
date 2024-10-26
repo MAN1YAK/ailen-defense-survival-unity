@@ -216,7 +216,7 @@ public class WaveSystem : MonoBehaviour
                 Phase2 = true;
             }
 
-            return Random.Range(0, enemies.Count - 2);
+            return Random.Range(0, enemies.Count);
         }
         else if (waveCount < 10)
         {
@@ -228,7 +228,7 @@ public class WaveSystem : MonoBehaviour
                 Phase3 = true;
             }
 
-            return Random.Range(0, enemies.Count - 1);
+            return Random.Range(0, enemies.Count);
         }
         else
         {

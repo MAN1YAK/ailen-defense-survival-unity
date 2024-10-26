@@ -9,17 +9,13 @@ public class BloodSplatSpawner : MonoBehaviour
     private void OnEnable()
     {
         RegularZombie.OnDeath += SpawnBlood;
-        SuicideBomberZombie.OnDeath += SpawnBlood;
         RunnerZombie.OnDeath += SpawnBlood;
-        BossZombie.OnDeath += SpawnBlood;
     }
 
     private void OnDisable()
     {
         RegularZombie.OnDeath -= SpawnBlood;
-        SuicideBomberZombie.OnDeath -= SpawnBlood;
         RunnerZombie.OnDeath -= SpawnBlood;
-        BossZombie.OnDeath -= SpawnBlood;
     }
 
     private void SpawnBlood(Vector3 pos)

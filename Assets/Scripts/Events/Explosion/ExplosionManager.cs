@@ -32,14 +32,10 @@ public class ExplosionManager : Singleton<ExplosionManager>
 
     private void OnEnable()
     {
-        // Subscribe to events 
-        SuicideBomberZombie.OnSuicideZombieExplode += SpawnExplosion;
     }
 
     private void OnDisable()
     {
-        // Unsubscribe from events
-        SuicideBomberZombie.OnSuicideZombieExplode -= SpawnExplosion;
     }
 
     private void SpawnExplosion(Vector3 pos, float blastRadius, float damage)
@@ -82,20 +78,6 @@ public class ExplosionManager : Singleton<ExplosionManager>
                 if (regularZombie != null)
                 {
                     regularZombie.TakeDamage( damage );
-                    continue;
-                }
-
-                BossZombie bossZombie = collider.gameObject.GetComponent<BossZombie>();
-                if (bossZombie != null)
-                {
-                    bossZombie.TakeDamage( damage );
-                    continue;
-                }
-
-                SuicideBomberZombie suicideBomberZombie = collider.gameObject.GetComponent<SuicideBomberZombie>();
-                if (suicideBomberZombie != null)
-                {
-                    suicideBomberZombie.TakeDamage( damage );
                     continue;
                 }
             }

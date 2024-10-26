@@ -24,12 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8424690773290520252}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 412.6142, y: 251.52936, z: 435.87427}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8424690773290520254
 MonoBehaviour:
@@ -46,9 +47,10 @@ MonoBehaviour:
   myGrid: {fileID: 0}
   enemies:
   - {fileID: 4344478986440256182, guid: c1c90f6b8538b4641a6a450027adb474, type: 3}
-  - {fileID: 4255071144247773421, guid: 91338a58247953c4da3714330b65162e, type: 3}
   - {fileID: 8209900052481470358, guid: 9789bd3168d64844885902f6d099549e, type: 3}
-  - {fileID: 5539086514332256979, guid: 877c2a49351f75b469ca2a35ae92d49b, type: 3}
   waveCount: 0
   enemyAlive: 0
   TimeCount: 5
+  Shotgun: {fileID: 0}
+  Sniper: {fileID: 0}
+  MiniGun: {fileID: 0}

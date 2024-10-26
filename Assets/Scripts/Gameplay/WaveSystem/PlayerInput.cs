@@ -29,15 +29,6 @@ public class PlayerInput : MonoBehaviour
                 {
                     go.GetComponent<RunnerZombie>().TakeDamage(500);
                 }
-                else if (go.GetComponent<SuicideBomberZombie>())
-                {
-
-                    go.GetComponent<SuicideBomberZombie>().TakeDamage(500);
-                }
-                else if (go.GetComponent<BossZombie>())
-                {
-                    go.GetComponent<BossZombie>().TakeDamage(500);
-                }
             }
         }
             

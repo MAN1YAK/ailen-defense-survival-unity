@@ -13,10 +13,5 @@ public class PlayerHitbox : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Fireball fireball = other.GetComponent<Fireball>();
-        if (fireball != null)
-        {
-            m_playerInfo.TakeDamage( fireball.Damage );
-        }
     }
 }

@@ -15,8 +15,6 @@ public class CollectableManager : Singleton<CollectableManager>
     {
         // Subscribe to events here
         RegularZombie.OnDeath       += SpawnCollectable;
-        SuicideBomberZombie.OnDeath += SpawnCollectable;
-        BossZombie.OnDeath          += SpawnCollectable;
         RunnerZombie.OnDeath        += SpawnCollectable;
     }
 
@@ -24,8 +22,6 @@ public class CollectableManager : Singleton<CollectableManager>
     {
         // Unsubscribe from events here
         RegularZombie.OnDeath       -= SpawnCollectable;
-        SuicideBomberZombie.OnDeath -= SpawnCollectable;
-        BossZombie.OnDeath          -= SpawnCollectable;
         RunnerZombie.OnDeath        -= SpawnCollectable;
     }
 

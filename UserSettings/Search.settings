@@ -60,6 +60,7 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"p: ref=<$object:none,UnityEngine.Object$> boss"
 ]
 searchItemFavorites = [
 ]
@@ -68,7 +69,7 @@ showSavedSearchPanel = false
 hideTabs = false
 expandedQueries = [
 ]
-queryBuilder = true
+queryBuilder = false
 ignoredProperties = "id;name;classname;imagecontentshash"
 helperWidgetCurrentArea = "all"
 disabledIndexers = ""
