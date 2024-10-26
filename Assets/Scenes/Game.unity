@@ -1336,7 +1336,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1654794843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eac650a2bb3c88479b04841e0728923, type: 3}
+  m_Script: {fileID: 11500000, guid: 413e92daee978334b8113894ff09c524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_AgentTypeID: 0
@@ -1697,6 +1697,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1204803261}
     m_Modifications:
+    - target: {fileID: 750895187622758280, guid: 25ee578238bc5264bb6b69a2eda254b8, type: 3}
+      propertyPath: Terrain
+      value: 
+      objectReference: {fileID: 1654794843}
     - target: {fileID: 750895187622758280, guid: 25ee578238bc5264bb6b69a2eda254b8, type: 3}
       propertyPath: terrain
       value: 

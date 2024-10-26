@@ -24,7 +24,7 @@ public class GridManager : Singleton<GridManager>
     private float WallHeight = 0.8f;
 
     [Header("References")]
-    [SerializeField] private GameObject         terrain;
+    [SerializeField] private GameObject         Terrain;
     [SerializeField] private WaypointManager waypointManager;
 
     [SerializeField] private GameObject unitCubeWall;
@@ -87,7 +87,7 @@ public class GridManager : Singleton<GridManager>
         }
 
         // Bake navmesh + waypoints
-        terrain.GetComponent<NavMeshSurface>().BuildNavMesh();
+        Terrain.GetComponent<NavMeshSurface>().BuildNavMesh();
         waypointManager.BakeWayPoints();
     }
 
