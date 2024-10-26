@@ -1320,6 +1320,7 @@ GameObject:
   - component: {fileID: 1654794846}
   - component: {fileID: 1654794845}
   - component: {fileID: 1654794844}
+  - component: {fileID: 1654794850}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -1336,7 +1337,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1654794843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 413e92daee978334b8113894ff09c524, type: 3}
+  m_Script: {fileID: 11500000, guid: 6df16a452a14a1c468558e6c60782e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_AgentTypeID: 0
@@ -1474,6 +1475,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1654794850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654794843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2becd1ceae6bf948aeef0f8e24a4833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1735979603 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6390360659536422739, guid: 5210a190684231e4893c347de34b39fa, type: 3}

@@ -7,27 +7,36 @@ using UnityEngine.AI;
  * Script to bake the NavMesh
  * at runtime  
  * 
- * i.e. So it can be baked after
- *      maze generation
- * 
- * Attach this script to the Terrain
+ * Attach this script to the object
+ * that has a NavMeshSurface component
  * 
  */
-[RequireComponent (typeof(NavMeshSurface))]
+[RequireComponent(typeof(NavMeshSurface))]
 public class NavMeshBaker : MonoBehaviour
 {
     private NavMeshSurface navMeshSurface;
 
     private void Start()
     {
-        Terrain terrain = GetComponent<Terrain>();
-        navMeshSurface = terrain.GetComponent<NavMeshSurface>();
-        navMeshSurface.BuildNavMesh();
+        // Get the NavMeshSurface directly from the current GameObject
+        navMeshSurface = GetComponent<NavMeshSurface>();
+
+        // Check if NavMeshSurface exists and build the NavMesh
+        if (navMeshSurface != null)
+        {
+            navMeshSurface.BuildNavMesh();
+        }
+        else
+        {
+            Debug.LogError("NavMeshSurface component is missing.");
+        }
     }
 
     public void BakeNavigationMesh()
     {
         if (navMeshSurface != null)
+        {
             navMeshSurface.BuildNavMesh();
+        }
     }
 }
