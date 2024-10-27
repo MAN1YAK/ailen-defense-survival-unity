@@ -18,8 +18,6 @@ public class FireButton : MonoBehaviour
     private MGScript m_MachineGunShoot;
     [SerializeField]
     private ShotgunScript m_ShotgunGunShoot;
-    [SerializeField]
-    private SniperScript m_SniperShoot;
 
     // Start is called before the first frame update
     void Start()
@@ -56,8 +54,6 @@ public class FireButton : MonoBehaviour
                             m_PistolShoot.Shoot();
                         else if (m_ShotgunGunShoot.isActiveAndEnabled)
                             m_ShotgunGunShoot.Shoot();
-                        else if (m_SniperShoot.isActiveAndEnabled)
-                            m_SniperShoot.Shoot();
                         else if (m_MachineGunShoot.isActiveAndEnabled)
                             m_MachineGunShoot.Shoot();
                     }

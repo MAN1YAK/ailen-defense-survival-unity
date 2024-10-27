@@ -88,7 +88,6 @@ public class SwapWeapons : MonoBehaviour
                 m_playerMove.ResetMoveSpeed();
                 Weapons[0].SetActive(true);     // Pistol
                 Weapons[1].SetActive(false);    // Shotgun
-                Weapons[2].SetActive(false);    // Sniper
                 Weapons[3].SetActive(false);    // Machine Gun
             }
             else if (index == 1)

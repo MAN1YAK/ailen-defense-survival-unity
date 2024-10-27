@@ -42,7 +42,7 @@ public class SceneManagement : MonoBehaviour
         AudioManager.instance.Play("Theme");
         AudioManager.instance.StopPlaying("MainMenuTheme");
 
-        Time.timeScale = 1f;
+    Time.timeScale = 1f;
 
         //FindObjectOfType<AudioManager>().Play("Theme");
         //FindObjectOfType<AudioManager>().StopPlaying("MainMenuTheme");

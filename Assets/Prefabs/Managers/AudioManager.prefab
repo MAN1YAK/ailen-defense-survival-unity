@@ -24,12 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2611607961883478976}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 436.66055, y: 239.73732, z: -24.321133}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2611607961883478977
 MonoBehaviour:
@@ -117,15 +118,6 @@ MonoBehaviour:
     SpatialBlend3D: 0
     loop: 0
     source: {fileID: 0}
-  - name: Sniper
-    clip: {fileID: 8300000, guid: c93380be9fedb6546923dc29549a5cf1, type: 3}
-    volume: 0.2
-    volumeVariance: 0.2
-    pitch: 1
-    pitchVariance: 0.08
-    SpatialBlend3D: 0
-    loop: 0
-    source: {fileID: 0}
   - name: EmptyGun
     clip: {fileID: 8300000, guid: 0d0af1f87bd3da042b9e47410d97fa3e, type: 3}
     volume: 0.457
@@ -155,15 +147,6 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Dying
     clip: {fileID: 8300000, guid: 704fc42ebe74ee54ab8dafdcdfd0fcc9, type: 3}
-    volume: 0.305
-    volumeVariance: 0.2
-    pitch: 1
-    pitchVariance: 0.08
-    SpatialBlend3D: 0
-    loop: 0
-    source: {fileID: 0}
-  - name: Explosion
-    clip: {fileID: 8300000, guid: 06ebe386a27452948a671ca0e4d79232, type: 3}
     volume: 0.305
     volumeVariance: 0.2
     pitch: 1

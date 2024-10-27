@@ -25,10 +25,6 @@ public class PickUpMovement : MonoBehaviour
         {
             textMesh.text = "ShotGun Picked Up!";
         }
-        else if (pickUp == 4)
-        {
-            textMesh.text = "SniperRifle Picked Up!";
-        }
         else if (pickUp == 5)
         {
             textMesh.text = "MiniGun Picked Up!";

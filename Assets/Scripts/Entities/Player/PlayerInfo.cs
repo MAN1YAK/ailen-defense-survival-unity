@@ -19,11 +19,9 @@ public class PlayerInfo : MonoBehaviour, Entity
 /*    ---- DEPRECATED ----
     public GameObject pistol;
     public GameObject shotgun;
-    public GameObject sniper;
     public GameObject machineGun;
     public static int ammo = 100;
     private float shotgunDist = 0.25f;
-    public static int grenadeAmount = 3;
 */
 
     // Getters

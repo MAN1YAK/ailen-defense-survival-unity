@@ -12,17 +12,14 @@ public class WeaponInfo : MonoBehaviour
 
     public GameObject pistol;
     public GameObject shotgun;
-    public GameObject sniper;
     public GameObject machineGun;
 
-    public static bool SGAccess = false;
-    public static bool SPAccess = false;
-    public static bool MGAccess = false;
+    public static bool SGAccess;
+    public static bool MGAccess;
 
-    public static int ammo = 150; // ammo starts at 150
-    public static int MaxAmmo = 20; // maxAmmo starts at 20
+    public static int ammo;
+    public static int MaxAmmo;
     public float shotgunDist = 0.062f;
-    public static int grenadeAmount = 3;
     public static float reloadTime = 1.5f;
     public static bool reloadAffirm = false;
     public static float wT = 0f;
@@ -41,7 +38,7 @@ public class WeaponInfo : MonoBehaviour
 
     void IncreaseMaxAmmo()
     {
-        MaxAmmo += 15; // Ammo increases by 15
+        MaxAmmo += 30; // Ammo increases by 30
     }
 
     // Start is called before the first frame update
@@ -49,8 +46,13 @@ public class WeaponInfo : MonoBehaviour
     {
         pistol.SetActive(true);
         shotgun.SetActive(false);
-        sniper.SetActive(false);
         machineGun.SetActive(false);
+
+        // Resets weapons & ammo on start
+        ammo = 150; 
+        MaxAmmo = 20;
+        SGAccess = false;
+        MGAccess = false;
 
         m_playerMove = GetComponent<PlayerMove>();
     }
@@ -64,7 +66,6 @@ public class WeaponInfo : MonoBehaviour
             //GetComponent<AudioSource>().Play();
             pistol.SetActive(true);
             shotgun.SetActive(false);
-            sniper.SetActive(false);
             machineGun.SetActive(false);
         }
         else if (Input.GetKey(KeyCode.Alpha2))
@@ -81,30 +82,11 @@ public class WeaponInfo : MonoBehaviour
                 pistol.SetActive(true);
                 shotgun.SetActive(false);
             }
-            sniper.SetActive(false);
             machineGun.SetActive(false);
         }
         else if (Input.GetKey(KeyCode.Alpha3))
         {
-            m_playerMove.ResetMoveSpeed();
             shotgun.SetActive(false);
-            if (SPAccess) // Sets the sniper as active weapon if sniper was picked up
-            {
-                //GetComponent<AudioSource>().Play();
-                pistol.SetActive(false);
-                sniper.SetActive(true);
-            }
-            else // else the pistol is set active
-            {
-                pistol.SetActive(true);
-                sniper.SetActive(false);
-            }
-            machineGun.SetActive(false);
-        }
-        else if (Input.GetKey(KeyCode.Alpha4))
-        {
-            shotgun.SetActive(false);
-            sniper.SetActive(false);
             if (MGAccess) // Sets the minigun as active weapon if minigun was picked up
             {
                 //GetComponent<AudioSource>().Play();

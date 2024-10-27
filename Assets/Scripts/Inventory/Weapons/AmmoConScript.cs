@@ -7,7 +7,6 @@ public class AmmoConScript : MonoBehaviour
 {
     public GameObject pistolGO;
     public GameObject shotgunGO;
-    public GameObject sniperGO;
     public GameObject MGGO;
     TextMeshProUGUI txt;
     // Start is called before the first frame update
@@ -27,10 +26,6 @@ public class AmmoConScript : MonoBehaviour
         else if (shotgunGO.activeSelf)
         {
             txt.text = "12"; // Shotgun Takes 12 ammo
-        }
-        else if (sniperGO.activeSelf)
-        {
-            txt.text = "6"; // Sniper takes 6 ammo
         }
         else if (MGGO.activeSelf)
         {

@@ -44,18 +44,13 @@ public class WaveSystem : MonoBehaviour
     public float TimeCount = 5f;
     private float ResetTimer = 30f;
 
-    // Bonus Threshold (extra points for clearing enemies fast)
-    private bool ThresholdAchieved = false;
-
     // Different Guns that spawn per phase
     [SerializeField] private GameObject Shotgun;
-    [SerializeField] private GameObject Sniper;
     [SerializeField] private GameObject MiniGun;
 
     // Milestones phases
     // Refers to the different waves that can spawn different enemies and stuff. 
     // refers to wave 1 - 2, wave 3 - 5, wave 6 - 9, wave 10 - infinity
-    private bool Phase1 = true;
     private bool Phase2 = false;
     private bool Phase3 = false;
     private bool Phase4 = false;
@@ -100,7 +95,6 @@ public class WaveSystem : MonoBehaviour
             {
                 if (enemyAlive == 0)
                 {
-                    ThresholdAchieved = true;
                     BonusScore?.Invoke();
                     TimeCount = 5f;
                 }
@@ -111,7 +105,6 @@ public class WaveSystem : MonoBehaviour
             {
                 if (enemyAlive == 0)
                 {
-                    ThresholdAchieved = false;
                     TimeCount = 5f;
                 }
             }
@@ -119,15 +112,7 @@ public class WaveSystem : MonoBehaviour
             // Once timer runs out, change state, add wave counter accordingly
             if (TimeCount <= 0f)
             {
-                if (ThresholdAchieved)
-                {
-                    waveCount += 2;
-                }
-                else
-                {
-                    waveCount += 1;
-                }
-
+                waveCount += 1;
                 TimeCount = ResetTimer;
                 State = WaveState.Spawning;
             }
@@ -222,7 +207,7 @@ public class WaveSystem : MonoBehaviour
         {
             if (Phase3 == false)
             {
-                Instantiate(Sniper, spawnPos, Quaternion.identity);
+                Instantiate(MiniGun, spawnPos, Quaternion.identity);
                 ResetTimer = 120f;
                 spawnInterval = 0.30f;
                 Phase3 = true;
@@ -234,7 +219,6 @@ public class WaveSystem : MonoBehaviour
         {
             if (Phase4 == false)
             {
-                Instantiate(MiniGun, spawnPos, Quaternion.identity);
                 ResetTimer = 240f;
                 spawnInterval = 0.45f;
                 Phase4 = true;

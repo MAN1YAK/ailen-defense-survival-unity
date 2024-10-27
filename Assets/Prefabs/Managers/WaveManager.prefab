@@ -52,5 +52,4 @@ MonoBehaviour:
   enemyAlive: 0
   TimeCount: 5
   Shotgun: {fileID: 0}
-  Sniper: {fileID: 0}
   MiniGun: {fileID: 0}

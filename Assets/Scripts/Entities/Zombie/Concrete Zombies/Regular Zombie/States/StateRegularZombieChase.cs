@@ -12,7 +12,6 @@ public class StateRegularZombieChase : State
     private NavMeshAgent  m_navMeshAgent;
     private PlayerInfo    m_playerInfo;
     private float         m_setDestBuffer;
-    private float         m_setSpeedBuffer;
 
     public StateRegularZombieChase(RegularZombie zombieController,
                                    PlayerInfo    playerInfo)
@@ -29,7 +28,6 @@ public class StateRegularZombieChase : State
         m_navMeshAgent.updatePosition = true;
         m_navMeshAgent.updateRotation = true;
 
-        m_setSpeedBuffer = 0f;
         m_setDestBuffer  = 0f;
     }
 
