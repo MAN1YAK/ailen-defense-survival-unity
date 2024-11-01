@@ -17,7 +17,7 @@ public class BulletScript : MonoBehaviour
         dir = bulletRotation * transform.forward;
 
         transform.localRotation *= Quaternion.Euler(90, 0, 0);
-        dmg = 18f; // Damage should be 18f
+        dmg = 25f; // Damage should be 18f
     }
 
     void Update()
@@ -40,21 +40,21 @@ public class BulletScript : MonoBehaviour
         else if (other.gameObject.CompareTag("Enemy"))
         {
             // Updated dmg given
-            RegularZombie regularZombie = other.gameObject.GetComponent<RegularZombie>();
-            if (regularZombie != null)
+            RegularAlien regularAlien = other.gameObject.GetComponent<RegularAlien>();
+            if (regularAlien != null)
             {
-                if (regularZombie.GetCurrentHP() > 0f)
+                if (regularAlien.GetCurrentHP() > 0f)
                 {
-                    regularZombie.TakeDamage(dmg);
+                    regularAlien.TakeDamage(dmg);
                 }
             }
 
-            RunnerZombie runnerZombie = other.gameObject.GetComponent<RunnerZombie>();
-            if (runnerZombie != null)
+            RunnerAlien runnerAlien = other.gameObject.GetComponent<RunnerAlien>();
+            if (runnerAlien != null)
             {
-                if (runnerZombie.GetCurrentHP() > 0f)
+                if (runnerAlien.GetCurrentHP() > 0f)
                 {
-                    runnerZombie.TakeDamage(dmg);
+                    runnerAlien.TakeDamage(dmg);
                 }
             }
 

@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class BloodSplatFadeout : MonoBehaviour
 {
-    [SerializeField] [Range (5f, 12f)]
-    private float fadeOutTimeMin;
-
-    [SerializeField] [Range(18f, 25f)]
-    private float fadeOutTimeMax;
+    
+    private float fadeOutTimeMin = 20f;
+    private float fadeOutTimeMax = 30f;
 
     private float m_fadeOutTime;
 
@@ -20,10 +18,10 @@ public class BloodSplatFadeout : MonoBehaviour
 
     private IEnumerator BloodSplatFadeOut(float _fadeOutTime)
     {
-        float timeElapsed   = 0f;
+        float timeElapsed = 0f;
         Color originalColor = GetComponent<Renderer>().material.color;
         float originalAlpha = originalColor.a;
-        float targetAlpha   = 0f;
+        float targetAlpha = 0f;
 
         while (timeElapsed < _fadeOutTime)
         {
@@ -31,21 +29,19 @@ public class BloodSplatFadeout : MonoBehaviour
 
             float ratio = timeElapsed / _fadeOutTime;
             float newAlpha = Mathf.Lerp(originalAlpha, targetAlpha, ratio);
-            Color newColor = GetComponent<Renderer>().material.color;
+            Color newColor = originalColor;  // Use the original color to avoid altering it directly.
             newColor.a = newAlpha;
             GetComponent<Renderer>().material.color = newColor;
 
-            if (ratio >= 0.95)
+            if (ratio >= 0.95f)
             {
-                newColor.a = targetAlpha;
+                newColor.a = targetAlpha; // Ensure alpha reaches 0
                 GetComponent<Renderer>().material.color = newColor;
                 break;
             }
 
             yield return null;
         }
-
-        yield return null;
-        Destroy( this );
+        Destroy(gameObject);
     }
 }

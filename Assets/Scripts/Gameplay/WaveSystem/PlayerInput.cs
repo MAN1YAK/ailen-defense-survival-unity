@@ -21,13 +21,13 @@ public class PlayerInput : MonoBehaviour
         {
             foreach (GameObject go in GOs)
             {
-                if (go.GetComponent<RegularZombie>())
+                if (go.GetComponent<RegularAlien>())
                 {
-                    go.GetComponent<RegularZombie>().TakeDamage(500);
+                    go.GetComponent<RegularAlien>().TakeDamage(500);
                 }
-                else if (go.GetComponent<RunnerZombie>())
+                else if (go.GetComponent<RunnerAlien>())
                 {
-                    go.GetComponent<RunnerZombie>().TakeDamage(500);
+                    go.GetComponent<RunnerAlien>().TakeDamage(500);
                 }
             }
         }

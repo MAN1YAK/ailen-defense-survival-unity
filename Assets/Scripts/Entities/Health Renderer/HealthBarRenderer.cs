@@ -47,8 +47,8 @@ public class HealthBarRenderer : Singleton<HealthBarRenderer>
 
         transform.localScale = new Vector3(length, width, 0.01f);
 
-        Zombie zombie = m_rootGO.GetComponent<Zombie>();
-        if (zombie != null)
+        Alien Alien = m_rootGO.GetComponent<Alien>();
+        if (Alien != null)
         {
             GetComponent<Renderer>().material = matEnemyHP;
         }
