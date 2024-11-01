@@ -5,7 +5,7 @@ using UnityEngine;
 public class CollectableManager : Singleton<CollectableManager>
 {
     [Header("Customisations")]
-    [SerializeField] [Range(0.0f, 100f)] [Tooltip("Chance of spawning pickups (after every zombie death)")]
+    [SerializeField] [Range(0.0f, 100f)] [Tooltip("Chance of spawning pickups (after every Alien death)")]
     private float spawnChance = 20f;
 
     [Header("References")]
@@ -14,15 +14,15 @@ public class CollectableManager : Singleton<CollectableManager>
     private void OnEnable()
     {
         // Subscribe to events here
-        RegularZombie.OnDeath       += SpawnCollectable;
-        RunnerZombie.OnDeath        += SpawnCollectable;
+        RegularAlien.OnDeath       += SpawnCollectable;
+        RunnerAlien.OnDeath        += SpawnCollectable;
     }
 
     private void OnDisabl()
     {
         // Unsubscribe from events here
-        RegularZombie.OnDeath       -= SpawnCollectable;
-        RunnerZombie.OnDeath        -= SpawnCollectable;
+        RegularAlien.OnDeath       -= SpawnCollectable;
+        RunnerAlien.OnDeath        -= SpawnCollectable;
     }
 
     private void SpawnCollectable(Vector3 pos)

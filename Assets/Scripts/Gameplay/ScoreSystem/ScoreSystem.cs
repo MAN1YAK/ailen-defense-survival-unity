@@ -13,15 +13,15 @@ public class ScoreSystem : MonoBehaviour
 
     private void OnEnable()
     {
-        RegularZombie.OnDeath += AddScoreRegular;
-        RunnerZombie.OnDeath += AddScoreRunner;
+        RegularAlien.OnDeath += AddScoreRegular;
+        RunnerAlien.OnDeath += AddScoreRunner;
         PlayerInfo.OnPlayerDamaged += OnHitDecreaseMultiplier;
     }
 
     private void OnDisable()
     {
-        RegularZombie.OnDeath -= AddScoreRegular;
-        RunnerZombie.OnDeath -= AddScoreRunner;
+        RegularAlien.OnDeath -= AddScoreRegular;
+        RunnerAlien.OnDeath -= AddScoreRunner;
         PlayerInfo.OnPlayerDamaged -= OnHitDecreaseMultiplier;
     }
 
