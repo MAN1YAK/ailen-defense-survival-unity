@@ -725,8 +725,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.20663935, g: 0.32501754, b: 0.4433962, a: 1}
-  m_Intensity: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -765,7 +765,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -784,13 +784,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043680964}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7028741, y: -0.18554558, z: 0.16177331, w: 0.66736066}
-  m_LocalPosition: {x: 0, y: 5.322, z: 0}
+  m_LocalRotation: {x: 0.71643144, y: -0, z: -0, w: 0.6976575}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 86.537, y: -160.426, z: -131.979}
+  m_LocalEulerAnglesHint: {x: 91.520996, y: 0, z: 0}
 --- !u!1001 &1110520696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1302,6 +1302,7 @@ GameObject:
   - component: {fileID: 1654794854}
   - component: {fileID: 1654794855}
   - component: {fileID: 1654794856}
+  - component: {fileID: 1654794857}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -1436,6 +1437,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c45acfd84ec492428359f25e551ff3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!222 &1654794856
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654794843}
+  m_CullTransparentMesh: 1
+--- !u!114 &1654794857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654794843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90985d7a4488f0e4b8b2fd8dc3ded4cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_AgentTypeID: 0
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
@@ -1453,14 +1474,6 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 0}
---- !u!222 &1654794856
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1654794843}
-  m_CullTransparentMesh: 1
 --- !u!1 &1735979603 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6390360659536422739, guid: 5210a190684231e4893c347de34b39fa, type: 3}

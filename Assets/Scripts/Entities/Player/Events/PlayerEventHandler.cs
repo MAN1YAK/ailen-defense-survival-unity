@@ -21,15 +21,15 @@ public class PlayerEventHandler : MonoBehaviour
     {
         // Subscribe to events
         Pickup.OnPickupHP += m_playerInfo.GainHP;
-        RegularZombie.OnAttackPlayer += m_playerInfo.TakeDamage;
-        RunnerZombie.OnAttackPlayer += m_playerInfo.TakeDamage;
+        RegularAlien.OnAttackPlayer += m_playerInfo.TakeDamage;
+        RunnerAlien.OnAttackPlayer += m_playerInfo.TakeDamage;
     }
 
     private void OnDisable()
     {
         // Unsubscribe from events
         Pickup.OnPickupHP -= m_playerInfo.GainHP;
-        RegularZombie.OnAttackPlayer -= m_playerInfo.TakeDamage;
-        RunnerZombie.OnAttackPlayer -= m_playerInfo.TakeDamage;
+        RegularAlien.OnAttackPlayer -= m_playerInfo.TakeDamage;
+        RunnerAlien.OnAttackPlayer -= m_playerInfo.TakeDamage;
     }
 }
