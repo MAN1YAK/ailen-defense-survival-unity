@@ -146,7 +146,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Dying
-    clip: {fileID: 8300000, guid: 704fc42ebe74ee54ab8dafdcdfd0fcc9, type: 3}
+    clip: {fileID: 8300000, guid: 489d047b7e09c50428c0dbe471dc188f, type: 3}
     volume: 0.305
     volumeVariance: 0.2
     pitch: 1
