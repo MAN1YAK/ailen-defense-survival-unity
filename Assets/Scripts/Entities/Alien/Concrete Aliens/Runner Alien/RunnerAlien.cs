@@ -73,8 +73,6 @@ public class RunnerAlien : MonoBehaviour, Alien, Entity
 
     private void Start()
     {
-        m_health = health;
-
         m_playerInfo = GameObject.Find("Player").GetComponent<PlayerInfo>();
         if (m_playerInfo == null)
             Debug.LogError("RunnerAlien Start() : m_playerInfo is NULL");
