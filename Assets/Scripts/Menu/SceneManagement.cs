@@ -38,11 +38,7 @@ public class SceneManagement : MonoBehaviour
     {
         AudioManager.instance.Play("Button");
         PreviousSceneTracker.Instance.prevScene = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene("Game");
-        AudioManager.instance.Play("Theme");
-        AudioManager.instance.StopPlaying("MainMenuTheme");
-
-    Time.timeScale = 1f;
+        SceneManager.LoadScene("Difficulty");
 
         //FindObjectOfType<AudioManager>().Play("Theme");
         //FindObjectOfType<AudioManager>().StopPlaying("MainMenuTheme");
