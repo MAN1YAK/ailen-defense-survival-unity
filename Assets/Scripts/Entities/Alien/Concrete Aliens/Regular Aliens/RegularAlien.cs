@@ -38,6 +38,7 @@ public class RegularAlien : MonoBehaviour, Alien, Entity
     //Difficulty Multiplier based on chosen difficulty
     private DifficultyPicker difficultyPicker;
 
+
     public StateMachine  stateMachine { get; private set; }
     private NavMeshAgent m_navMeshAgent;
     private PlayerInfo   m_playerInfo;
@@ -109,7 +110,8 @@ public class RegularAlien : MonoBehaviour, Alien, Entity
 
     public void Attack()
     {
-        OnAttackPlayer?.Invoke( dmgPerHit );
+        float difficultyMultiplier = GetDifficultyMultiplier();
+        OnAttackPlayer?.Invoke( dmgPerHit * difficultyMultiplier);
     }
 
     public void TakeDamage(float dmg)
