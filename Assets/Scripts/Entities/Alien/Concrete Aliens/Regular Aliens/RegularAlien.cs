@@ -35,6 +35,9 @@ public class RegularAlien : MonoBehaviour, Alien, Entity
     [Tooltip ("Time between hits (in seconds)")]
     private float attackSpeed;
 
+    //Difficulty Multiplier based on chosen difficulty
+    private DifficultyPicker difficultyPicker;
+
     public StateMachine  stateMachine { get; private set; }
     private NavMeshAgent m_navMeshAgent;
     private PlayerInfo   m_playerInfo;
@@ -67,6 +70,8 @@ public class RegularAlien : MonoBehaviour, Alien, Entity
 
     private void Start()
     {
+        float difficultyMultiplier = GetDifficultyMultiplier();
+        health *= difficultyMultiplier;
         m_health = health;
 
         m_playerInfo = GameObject.Find("Player").GetComponent<PlayerInfo>();
@@ -92,6 +97,14 @@ public class RegularAlien : MonoBehaviour, Alien, Entity
     private void Update()
     {
         stateMachine.Update();
+    }
+
+    private float GetDifficultyMultiplier()
+    {
+        if (difficultyPicker == null)
+            difficultyPicker = FindObjectOfType<DifficultyPicker>(); // Ensure we get the reference
+
+        return difficultyPicker.GetDifficultyMultiplier(); // Get the multiplier from DifficultyPicker
     }
 
     public void Attack()
