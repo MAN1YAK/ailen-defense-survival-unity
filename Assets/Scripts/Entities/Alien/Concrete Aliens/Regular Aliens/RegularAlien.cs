@@ -69,11 +69,14 @@ public class RegularAlien : MonoBehaviour, Alien, Entity
      */
     public static event Action<Vector3, float> OnDamaged;
 
+    private void Awake()
+    {
+        // Initialize health in Awake so it's ready before other scripts access it
+        m_health = health * GetDifficultyMultiplier();
+    }
+
     private void Start()
     {
-        float difficultyMultiplier = GetDifficultyMultiplier();
-        health *= difficultyMultiplier;
-        m_health = health;
 
         m_playerInfo = GameObject.Find("Player").GetComponent<PlayerInfo>();
         if (m_playerInfo == null)
