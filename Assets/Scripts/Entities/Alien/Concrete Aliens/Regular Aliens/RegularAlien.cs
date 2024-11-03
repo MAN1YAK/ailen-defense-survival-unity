@@ -71,8 +71,10 @@ public class RegularAlien : MonoBehaviour, Alien, Entity
 
     private void Awake()
     {
-        // Initialize health in Awake so it's ready before other scripts access it
+        // Initialize stats in Awake so it's ready before other scripts access it
         m_health = health * GetDifficultyMultiplier();
+        dmgPerHit = dmgPerHit * GetDifficultyMultiplier();
+        moveSpeed = moveSpeed * GetDifficultyMultiplier();
     }
 
     private void Start()
@@ -114,7 +116,7 @@ public class RegularAlien : MonoBehaviour, Alien, Entity
     public void Attack()
     {
         float difficultyMultiplier = GetDifficultyMultiplier();
-        OnAttackPlayer?.Invoke( dmgPerHit * difficultyMultiplier);
+        OnAttackPlayer?.Invoke( dmgPerHit );
     }
 
     public void TakeDamage(float dmg)
