@@ -39,6 +39,7 @@ public class BulletScript : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Enemy"))
         {
+            AudioManager.instance.Play("Alien Hurt");
             // Updated dmg given
             RegularAlien regularAlien = other.gameObject.GetComponent<RegularAlien>();
             if (regularAlien != null)
