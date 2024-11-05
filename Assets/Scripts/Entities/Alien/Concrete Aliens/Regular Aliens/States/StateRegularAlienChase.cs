@@ -13,12 +13,16 @@ public class StateRegularAlienChase : State
     private PlayerInfo    m_playerInfo;
     private float         m_setDestBuffer;
 
+    private Animator m_animator;
+
     public StateRegularAlienChase(RegularAlien AlienController,
                                    PlayerInfo    playerInfo)
     {
         m_AlienController = AlienController;
         m_navMeshAgent     = AlienController.GetComponent<NavMeshAgent>();
         m_playerInfo       = playerInfo;
+
+        m_animator = AlienController.GetComponent<Animator>();
     }
     public override void OnStateEnter()
     {
@@ -29,6 +33,8 @@ public class StateRegularAlienChase : State
         m_navMeshAgent.updateRotation = true;
 
         m_setDestBuffer  = 0f;
+
+        m_animator.SetTrigger("isRunning");
     }
 
     public override void OnStateUpdate()
@@ -44,6 +50,8 @@ public class StateRegularAlienChase : State
         {
             m_setDestBuffer = 0f;
             m_navMeshAgent.SetDestination(m_playerInfo.pos);
+
+            m_animator.SetTrigger("isRunning");
         }
 
         // Set random speed every few seconds
@@ -58,6 +66,7 @@ public class StateRegularAlienChase : State
 
     public override void OnStateExit()
     {
+        
     }
 
     public override string GetStateID()

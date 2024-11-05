@@ -31,9 +31,6 @@ public class RunnerAlien : MonoBehaviour, Alien, Entity
     [Tooltip("Time between hits (in seconds)")]
     private float attackSpeed;
 
-    //Difficulty Multiplier based on chosen difficulty
-    private DifficultyPicker difficultyPicker;
-
     public StateMachine  stateMachine { get; private set; }
     private NavMeshAgent m_navMeshAgent;
     private PlayerInfo   m_playerInfo;
@@ -54,14 +51,6 @@ public class RunnerAlien : MonoBehaviour, Alien, Entity
     // param - Position at time of death
     public static event Action<Vector3> OnDeath;
 
-    private void Awake()
-    {
-        // Initialize stats in Awake so it's ready before other scripts access it
-        m_health = health * GetDifficultyMultiplier();
-        dmgPerHit = dmgPerHit * GetDifficultyMultiplier();
-        moveSpeed = moveSpeed * GetDifficultyMultiplier();
-    }
-
     /*
      * Broadcasts the info about the Alien
      * when he gets damaged
@@ -73,6 +62,8 @@ public class RunnerAlien : MonoBehaviour, Alien, Entity
 
     private void Start()
     {
+        m_health = health;
+
         m_playerInfo = GameObject.Find("Player").GetComponent<PlayerInfo>();
         if (m_playerInfo == null)
             Debug.LogError("RunnerAlien Start() : m_playerInfo is NULL");
@@ -98,13 +89,6 @@ public class RunnerAlien : MonoBehaviour, Alien, Entity
         stateMachine.Update();
     }
 
-    private float GetDifficultyMultiplier()
-    {
-        if (difficultyPicker == null)
-            difficultyPicker = FindObjectOfType<DifficultyPicker>(); // Ensure we get the reference
-
-        return difficultyPicker.GetDifficultyMultiplier(); // Get the multiplier from DifficultyPicker
-    }
     public void Attack()
     {
         OnAttackPlayer?.Invoke(dmgPerHit);
@@ -117,14 +101,12 @@ public class RunnerAlien : MonoBehaviour, Alien, Entity
 
         if (m_health - dmg <= 0f)
         {
-            AudioManager.instance.Play("AlienRunner_Death");
             m_health = -Mathf.Epsilon;
             OnDeath?.Invoke(transform.position);
             Destroy(this.gameObject);
         }
         else
         {
-            AudioManager.instance.Play("AlienRunner_Hurt");
             m_health -= dmg;
             OnDamaged?.Invoke(transform.position, dmg);
         }

@@ -13,12 +13,16 @@ public class StateRunnerAlienAttack : State
     private float        m_attackTimer;
     private float        m_rotationSpeed;
 
+    private Animator m_animator;
+
     public StateRunnerAlienAttack(RunnerAlien AlienController,
                                   PlayerInfo playerInfo)
     {
         m_AlienController = AlienController;
         m_navMeshAgent     = AlienController.GetComponent<NavMeshAgent>();
         m_playerInfo       = playerInfo;
+
+        m_animator = AlienController.GetComponent<Animator>();
     }
 
     public override void OnStateEnter()
@@ -29,6 +33,8 @@ public class StateRunnerAlienAttack : State
 
         m_rotationSpeed = m_navMeshAgent.angularSpeed;
         m_navMeshAgent.isStopped = true;
+
+        m_animator.SetTrigger("isAttacking");
     }
 
     public override void OnStateUpdate()
@@ -44,6 +50,8 @@ public class StateRunnerAlienAttack : State
         {
             m_attackTimer = m_timePerHit;
             m_AlienController.Attack();
+
+            m_animator.SetTrigger("isAttacking");
         }
 
         // Rotate towards player
@@ -64,6 +72,7 @@ public class StateRunnerAlienAttack : State
 
     public override void OnStateExit()
     {
+        m_animator.ResetTrigger("isAttacking");
     }
 
     public override string GetStateID()

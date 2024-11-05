@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(Animator))] // Ensure the Animator component is present
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField]
@@ -28,6 +29,9 @@ public class PlayerMove : MonoBehaviour
 
     private Vector3 m_moveForce;
     private CharacterController m_controller;
+
+    // Reference to the Animator component
+    private Animator m_animator;
 
     private PlayerInfo m_playerInfo;
 
@@ -67,6 +71,9 @@ public class PlayerMove : MonoBehaviour
 
         m_playerInfo = GetComponent<PlayerInfo>();
 
+        // Get the Animator component
+        m_animator = GetComponent<Animator>(); 
+
 #if UNITY_ANDROID
         m_joystickOrigin = movementJoystick.transform.position;
         m_joystickTolerance = 0.333f * m_screenWidth;
@@ -85,7 +92,7 @@ public class PlayerMove : MonoBehaviour
 
         bool hasInput = (Mathf.Abs(moveZ) > 0.015f || Mathf.Abs(moveX) > 0.015f);
 
-        if ( hasInput )
+        if (hasInput)
         {
             m_moveForce = Vector3.zero;
 
@@ -115,8 +122,16 @@ public class PlayerMove : MonoBehaviour
 
             transform.forward = m_moveForce.normalized;
             m_controller.Move(m_moveForce.normalized * m_moveSpeed * Time.deltaTime);
+
+            // Set the running animation
+            m_animator.SetBool("isRunning", true);
         }
-        /*#elif UNITY_ANDROID && UNITY_EDITOR
+        else
+        {
+            // Set idle animation
+            m_animator.SetBool("isRunning", false);
+        }
+ /*#elif UNITY_ANDROID && UNITY_EDITOR
                 if (Input.GetMouseButton( 1 ))
                 {
                     Vector2 touchPos = Input.mousePosition;
