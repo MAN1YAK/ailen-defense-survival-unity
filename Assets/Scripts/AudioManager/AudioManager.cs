@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        if (sound == "Alien Hurt") // Check if the sound is Alien Hurt
+        if (sound == "AlienRegular_Hurt" || sound == "AlienRunner_Hurt" || sound == "Player_Hurt" || sound == "AlienRegular_Death" || sound == "AlienRunner_Death") // Sounds to play simultaneously
         {
             // Create a new audio source for this sound to allow simultaneous playback
             AudioSource newSource = gameObject.AddComponent<AudioSource>();

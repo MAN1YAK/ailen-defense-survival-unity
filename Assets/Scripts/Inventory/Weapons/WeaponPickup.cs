@@ -14,16 +14,17 @@ public class WeaponPickup : MonoBehaviour
             {
                 WeaponInfo.SGAccess = true;
                 Destroy(this.gameObject);
-                PickUpMovement.pickUp = 3;
-                PickUpSpawn.show = true;
+                PopUpText_Movement.pickUp = 3;
+                PopUpText_Spawn.show = true;
             }
             else if (weaponNum == 2)
             {
                 WeaponInfo.MGAccess = true;
                 Destroy(this.gameObject);
-                PickUpMovement.pickUp = 5;
-                PickUpSpawn.show = true;
+                PopUpText_Movement.pickUp = 5;
+                PopUpText_Spawn.show = true;
             }
+            AudioManager.instance.Play("PickUpSound_Weapons");
         }
     }
 }

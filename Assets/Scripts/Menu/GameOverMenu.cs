@@ -43,7 +43,7 @@ public class GameOverMenu : MonoBehaviour
 
     public void EndGame()
     {
-        AudioManager.instance.Play("Dying");
+        AudioManager.instance.Play("Player_Death");
 
         if (gameEnded == false)
         {

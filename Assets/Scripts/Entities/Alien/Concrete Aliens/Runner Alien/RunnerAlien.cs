@@ -117,12 +117,14 @@ public class RunnerAlien : MonoBehaviour, Alien, Entity
 
         if (m_health - dmg <= 0f)
         {
+            AudioManager.instance.Play("AlienRunner_Death");
             m_health = -Mathf.Epsilon;
             OnDeath?.Invoke(transform.position);
             Destroy(this.gameObject);
         }
         else
         {
+            AudioManager.instance.Play("AlienRunner_Hurt");
             m_health -= dmg;
             OnDamaged?.Invoke(transform.position, dmg);
         }

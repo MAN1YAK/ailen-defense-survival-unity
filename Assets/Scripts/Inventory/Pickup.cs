@@ -66,18 +66,18 @@ public class Pickup : MonoBehaviour
             if (chance == 0)
             {
                 AudioManager.instance.Play("PickUpSound");
-                PickUpMovement.pickUp = 2;
+                PopUpText_Movement.pickUp = 2;
                 float hpGain = UnityEngine.Random.Range(10f, 40f);
                 OnPickupHP?.Invoke(hpGain);
-                PickUpSpawn.show = true;
+                PopUpText_Spawn.show = true;
                 Destroy(this.gameObject);
             }
             else
             {
                 AudioManager.instance.Play("PickUpSound");
-                PickUpMovement.pickUp = 1;
+                PopUpText_Movement.pickUp = 1;
                 OnPickupAmmo?.Invoke();
-                PickUpSpawn.show = true;
+                PopUpText_Spawn.show = true;
                 Destroy(this.gameObject);
             }
         }

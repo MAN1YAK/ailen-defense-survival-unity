@@ -82,36 +82,6 @@ public class ScoreSystem : MonoBehaviour
         timer = 6.0f;
     }
 
-    void AddScoreSuicide(Vector3 dummyVariable)
-    {
-        MultiplierText.fontSize = 60f;
-
-        AudioManager.instance.Play("Multiplier");
-        ScoreValue += 150 * ScoreMultiplier;
-
-        // Increase multi
-        if (ScoreMultiplier <= 128)
-            ScoreMultiplier *= 2;
-
-        // Reset timer
-        timer = 6.0f;
-    }
-
-    void AddScoreBoss(Vector3 dummyVariable)
-    {
-        MultiplierText.fontSize = 60f;
-
-        AudioManager.instance.Play("Multiplier");
-        ScoreValue += 400 * ScoreMultiplier;
-
-        // Increase multi
-        if (ScoreMultiplier <= 128)
-            ScoreMultiplier *= 2;
-
-        // Reset timer
-        timer = 6.0f;
-    }
-
     // Decrease Multiplier if player is hit or take too long to continue the killing streak
     void DecreaseMultiplier()
     {
@@ -123,7 +93,7 @@ public class ScoreSystem : MonoBehaviour
     }
     void OnHitDecreaseMultiplier(float dummyVariable)
     {
-        AudioManager.instance.Play("Ugh");
+        AudioManager.instance.Play("Player_Hurt");
         // Rest the multiplier when hit
         if (ScoreMultiplier > 1)
         {

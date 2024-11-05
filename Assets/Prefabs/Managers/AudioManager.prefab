@@ -84,16 +84,25 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: PickUpSound
     clip: {fileID: 8300000, guid: 6806c7e1220b5f840b9a06ddd1b3e45a, type: 3}
-    volume: 0.1
+    volume: 0.5
     volumeVariance: 0.2
     pitch: 0.5
     pitchVariance: 0.14
     SpatialBlend3D: 0
     loop: 0
     source: {fileID: 0}
+  - name: PickUpSound_Weapons
+    clip: {fileID: 8300000, guid: a75946eb9d948c7498c8f68ddf295baf, type: 3}
+    volume: 0.305
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.08
+    SpatialBlend3D: 0
+    loop: 0
+    source: {fileID: 0}
   - name: Pistol
-    clip: {fileID: 8300000, guid: 3118736ae17972a48b2c0651df6ccbdd, type: 3}
-    volume: 0.2
+    clip: {fileID: 8300000, guid: 010dcfb4d8dfff04789626fb6fd0592f, type: 3}
+    volume: 0.3
     volumeVariance: 0.2
     pitch: 1
     pitchVariance: 0.08
@@ -101,17 +110,17 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Minigun
-    clip: {fileID: 8300000, guid: 33e230fe4541dd04f8e0f56e770d4af8, type: 3}
-    volume: 0.2
+    clip: {fileID: 8300000, guid: 5733484aa31216f49aedb8e4814f0724, type: 3}
+    volume: 1
     volumeVariance: 0.2
-    pitch: 1
+    pitch: 1.5
     pitchVariance: 0.08
     SpatialBlend3D: 0
     loop: 0
     source: {fileID: 0}
   - name: Shotgun
-    clip: {fileID: 8300000, guid: 2ae6b88ffa4bf294e8f463b7df38d04d, type: 3}
-    volume: 0.2
+    clip: {fileID: 8300000, guid: b5be191509ce38442b9c20bcffe58051, type: 3}
+    volume: 0.3
     volumeVariance: 0.2
     pitch: 1
     pitchVariance: 0.08
@@ -136,16 +145,7 @@ MonoBehaviour:
     SpatialBlend3D: 0
     loop: 0
     source: {fileID: 0}
-  - name: Ugh
-    clip: {fileID: 8300000, guid: b3d91faf1cbf0cc45978ab7ee451b5bc, type: 3}
-    volume: 0.305
-    volumeVariance: 0.2
-    pitch: 1
-    pitchVariance: 0.08
-    SpatialBlend3D: 0
-    loop: 0
-    source: {fileID: 0}
-  - name: Dying
+  - name: Player_Death
     clip: {fileID: 8300000, guid: 489d047b7e09c50428c0dbe471dc188f, type: 3}
     volume: 0.305
     volumeVariance: 0.2
@@ -154,4 +154,48 @@ MonoBehaviour:
     SpatialBlend3D: 0
     loop: 0
     source: {fileID: 0}
-  AudioSrc: {fileID: 0}
+  - name: Player_Hurt
+    clip: {fileID: 8300000, guid: b3d91faf1cbf0cc45978ab7ee451b5bc, type: 3}
+    volume: 0.305
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.08
+    SpatialBlend3D: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: AlienRunner_Hurt
+    clip: {fileID: 8300000, guid: a5336caaafa2b4c46827b2dd72b3c923, type: 3}
+    volume: 0.5
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.08
+    SpatialBlend3D: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: AlienRegular_Hurt
+    clip: {fileID: 8300000, guid: 16e398f025de43e4c8e862dd8fe68c08, type: 3}
+    volume: 0.5
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.08
+    SpatialBlend3D: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: AlienRegular_Death
+    clip: {fileID: 8300000, guid: c72ef8b66e6415e4eb9a5f287a95e8a9, type: 3}
+    volume: 0.305
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.08
+    SpatialBlend3D: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: AlienRunner_Death
+    clip: {fileID: 8300000, guid: 2eb8189bcc7fe584a975d3ce80d3fde1, type: 3}
+    volume: 0.305
+    volumeVariance: 0.2
+    pitch: 1
+    pitchVariance: 0.08
+    SpatialBlend3D: 0
+    loop: 0
+    source: {fileID: 0}

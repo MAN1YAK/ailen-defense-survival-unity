@@ -10,30 +10,23 @@ public class WeaponGUIScript : MonoBehaviour
     public GameObject shotgunGO;
     public GameObject MGGO;
 
-    //public GameObject pistolUI;
-    //public GameObject shotgunUI;
-    //public GameObject MGUI;
-
     public GameObject TptI; // Translucent Pistol Image
     public GameObject TsgI; // Translucent Shotgun Image
     public GameObject TmgI; // Translucent MiniGun Image
     public GameObject RI; // Reloading Image
-    public GameObject Ifin;  // Infinity Image
+    public GameObject Ifin; // Infinity Image
 
     public float time;
     public bool t;
     public float waitTime = 0.05f;
     public float wT = 0.05f;
+    private bool isReloading = false; // track reloading state
 
     AudioSource m_AudioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        //pistolUI.SetActive(true);
-        //shotgunUI.SetActive(false);
-        //MGUI.SetActive(false);
-
         TptI.SetActive(true);
         TsgI.SetActive(false);
         TmgI.SetActive(false);
@@ -51,10 +44,6 @@ public class WeaponGUIScript : MonoBehaviour
     {
         if (pistolGO.activeSelf)
         {
-            //pistolUI.SetActive(true);
-            //shotgunUI.SetActive(false);
-            //MGUI.SetActive(false);
-
             TptI.SetActive(true);
             TsgI.SetActive(false);
             TmgI.SetActive(false);
@@ -62,10 +51,6 @@ public class WeaponGUIScript : MonoBehaviour
         }
         else if (shotgunGO.activeSelf)
         {
-            //pistolUI.SetActive(false);
-            //shotgunUI.SetActive(true);
-            //MGUI.SetActive(false);
-
             TptI.SetActive(false);
             TsgI.SetActive(true);
             TmgI.SetActive(false);
@@ -73,26 +58,38 @@ public class WeaponGUIScript : MonoBehaviour
         }
         else if (MGGO.activeSelf)
         {
-            //pistolUI.SetActive(false);
-            //shotgunUI.SetActive(false);
-            //MGUI.SetActive(true);
-
             TptI.SetActive(false);
             TsgI.SetActive(false);
             TmgI.SetActive(true);
             Ifin.SetActive(false);
         }
-        if (Input.GetKey(KeyCode.R) && WeaponInfo.ammo < 100 && WeaponInfo.MaxAmmo > 0)
+
+        if (Input.GetKeyDown(KeyCode.R) && WeaponInfo.ammo < 100 && WeaponInfo.MaxAmmo > 0)
         {
-            m_AudioSource.loop = true;
-            m_AudioSource.Play();
-            Reload();
+            if (!isReloading)
+            {
+                // Start reloading
+                m_AudioSource.loop = true;
+                m_AudioSource.Play();
+                Reload();
+                isReloading = true;
+            }
+            else
+            {
+                // Stop reloading
+                WeaponInfo.reloadAffirm = false;
+                RI.SetActive(false);
+                m_AudioSource.Stop();
+                isReloading = false;
+            }
         }
+
         if (WeaponInfo.ammo <= 0)
         {
             WeaponInfo.ammo = 0;
         }
-        if (WeaponInfo.reloadAffirm) // Reload Function
+
+        if (WeaponInfo.reloadAffirm) // Reload function
         {
             if (wT <= 0)
             {
@@ -102,18 +99,15 @@ public class WeaponGUIScript : MonoBehaviour
             }
             wT -= 1 * Time.deltaTime;
             RI.SetActive(true);
+
             if (WeaponInfo.ammo >= 100)
             {
                 WeaponInfo.ammo = 100;
-                RI.SetActive(false);
-                WeaponInfo.reloadAffirm = false;
-                m_AudioSource.Stop();
+                EndReload();
             }
             else if (WeaponInfo.MaxAmmo <= 0)
             {
-                RI.SetActive(false);
-                WeaponInfo.reloadAffirm = false;
-                m_AudioSource.Stop();
+                EndReload();
             }
         }
     }
@@ -121,5 +115,13 @@ public class WeaponGUIScript : MonoBehaviour
     public void Reload()
     {
         WeaponInfo.reloadAffirm = true;
+    }
+
+    private void EndReload()
+    {
+        RI.SetActive(false);
+        WeaponInfo.reloadAffirm = false;
+        m_AudioSource.Stop();
+        isReloading = false;
     }
 }

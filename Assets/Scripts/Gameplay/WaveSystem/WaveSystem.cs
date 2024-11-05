@@ -30,7 +30,7 @@ public class WaveSystem : MonoBehaviour
     private int chosenSpawn = 0;
 
     // Wave Count
-    public int waveCount = 0;
+    [SerializeField] public int waveCount = 0;
     
     // Enemy Counts
     private int enemySpawnedMax = 0;
@@ -65,10 +65,14 @@ public class WaveSystem : MonoBehaviour
         // Spawning of enemies
         if (State == WaveState.Spawning)
         {
-            if (enemySpawnedMax >= 50)
-                enemySpawnedMax = 70;
+            if (waveCount + 1 > 29)
+                enemySpawnedMax = 200;
+            if (waveCount + 1 > 19)
+                enemySpawnedMax = 5 * (waveCount + 1);
+            else if (waveCount + 1 > 9)
+                enemySpawnedMax = 4 * (waveCount + 1);
             else
-                enemySpawnedMax = GetNthFibonacci_Ite(waveCount + 1);
+                enemySpawnedMax = 3 * (waveCount + 1);
 
             enemySpawned = 0;
 
@@ -117,23 +121,6 @@ public class WaveSystem : MonoBehaviour
                 State = WaveState.Spawning;
             }
         }
-    }
-
-    // Fibonacci Sequence to spawn enemies
-    public static int GetNthFibonacci_Ite(int n)
-    {
-        // Need to decrement by 1 to follow the actual start of fibonacci sequence 
-        int number = n - 1; 
-        int[] Fib = new int[number + 1];
-        Fib[0] = 0;
-        Fib[1] = 1;
-        for (int i = 2; i <= number; i++)
-        {
-            Fib[i] = Fib[i - 2] + Fib[i - 1];
-        }
-
-        // Add arbitrary value of 5 just so that it doesnt start at 1
-        return Fib[number] + 5;
     }
 
     // Spawn Enemies
@@ -196,6 +183,8 @@ public class WaveSystem : MonoBehaviour
             if (Phase2 == false)
             {
                 Instantiate(Shotgun, spawnPos, Quaternion.identity);
+                PopUpText_Movement.pickUp = 6;
+                PopUpText_Spawn.show = true;
                 ResetTimer = 60f;
                 spawnInterval = 0.15f;
                 Phase2 = true;
@@ -208,6 +197,8 @@ public class WaveSystem : MonoBehaviour
             if (Phase3 == false)
             {
                 Instantiate(MiniGun, spawnPos, Quaternion.identity);
+                PopUpText_Movement.pickUp = 7;
+                PopUpText_Spawn.show = true;
                 ResetTimer = 120f;
                 spawnInterval = 0.30f;
                 Phase3 = true;
