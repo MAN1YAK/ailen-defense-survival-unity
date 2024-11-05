@@ -41,7 +41,7 @@ public class GridManager : Singleton<GridManager>
 
     private void Awake()
     {
-        LeanTween.init(800);
+        LeanTween.init(1600);
         m_numTilesX  = NumTilesX;
         m_numTilesZ  = NumTilesZ;
         m_tileSize   = TileSize;

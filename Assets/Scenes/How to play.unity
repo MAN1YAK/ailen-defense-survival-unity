@@ -1273,7 +1273,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5688185301506238559, guid: 78648ee705b2ea14686a7bfe99459d9d, type: 3}
+      propertyPath: outlineWidth
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3455323573409069372, guid: 78648ee705b2ea14686a7bfe99459d9d, type: 3}
+    - {fileID: 2830586280190049374, guid: 78648ee705b2ea14686a7bfe99459d9d, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -5045,6 +5052,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RunnerAlien
       objectReference: {fileID: 0}
+    - target: {fileID: 4998079392615148726, guid: c8051853203acf34d9830dde46a3fe97, type: 3}
+      propertyPath: outlineWidth
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7476117617418959232, guid: c8051853203acf34d9830dde46a3fe97, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -5053,7 +5064,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7476117617418959232, guid: c8051853203acf34d9830dde46a3fe97, type: 3}
+    - {fileID: 8063375888955712969, guid: c8051853203acf34d9830dde46a3fe97, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -5263,7 +5277,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[ Right Click ] = Shoot
+  m_Text: '[ Left Click ] = Shoot
 
 
     [ R ] = Reload/Stop Reload'

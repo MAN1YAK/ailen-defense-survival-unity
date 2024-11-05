@@ -188,15 +188,38 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c956f9d66e0250348b4fa6d2a9f632a8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7476117617418959232}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c956f9d66e0250348b4fa6d2a9f632a8, type: 3}
+    - targetCorrespondingSourceObject: {fileID: -8391222552659086748, guid: c956f9d66e0250348b4fa6d2a9f632a8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6452819203160589260}
+      addedObject: {fileID: 4998079392615148726}
   m_SourcePrefab: {fileID: 100100000, guid: c956f9d66e0250348b4fa6d2a9f632a8, type: 3}
 --- !u!4 &1513876727399020339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c956f9d66e0250348b4fa6d2a9f632a8, type: 3}
   m_PrefabInstance: {fileID: 1335571970957512920}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1802711082371261116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: c956f9d66e0250348b4fa6d2a9f632a8, type: 3}
+  m_PrefabInstance: {fileID: 1335571970957512920}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4998079392615148726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802711082371261116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 0.5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2182432107214220681 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c956f9d66e0250348b4fa6d2a9f632a8, type: 3}
@@ -262,24 +285,6 @@ MonoBehaviour:
   dmgPerHit: 5
   attackRange: 3.86
   attackSpeed: 1.5
---- !u!114 &6452819203160589260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2182432107214220681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 0.81960785, g: 0.33698812, b: 0.30588233, a: 1}
-  outlineWidth: 1
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!1001 &4175476994353975750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -314,7 +319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4336461066643939500, guid: 03d033a391cc7f24bb997e22c8b828c2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.3800001
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 4336461066643939500, guid: 03d033a391cc7f24bb997e22c8b828c2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -347,6 +352,10 @@ PrefabInstance:
     - target: {fileID: 4336461066643939501, guid: 03d033a391cc7f24bb997e22c8b828c2, type: 3}
       propertyPath: m_Name
       value: HP Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336461066643939504, guid: 03d033a391cc7f24bb997e22c8b828c2, type: 3}
+      propertyPath: yOffset
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
