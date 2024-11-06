@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myGrid: {fileID: 0}
   enemies:
-  - {fileID: 4344478986440256182, guid: c1c90f6b8538b4641a6a450027adb474, type: 3}
-  - {fileID: 8209900052481470358, guid: 9789bd3168d64844885902f6d099549e, type: 3}
+  - {fileID: 3209476598911110200, guid: 78648ee705b2ea14686a7bfe99459d9d, type: 3}
+  - {fileID: 2182432107214220681, guid: c8051853203acf34d9830dde46a3fe97, type: 3}
   waveCount: 0
   enemyAlive: 0
   TimeCount: 0.25

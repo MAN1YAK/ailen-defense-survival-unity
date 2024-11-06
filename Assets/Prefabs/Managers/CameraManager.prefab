@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d646fa1224fcd4391655069b993282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 4820013441813767021, guid: 92b34e58d125ded42a8988e0ea926e95, type: 3}
   cameraAngle: 40
   distanceFromPlayer: 115
   fieldOfView: 14.2

@@ -10,13 +10,13 @@ public class HealthBarRenderer : Singleton<HealthBarRenderer>
 {
     [Header("Customisations (set before play)")]
 
-    [SerializeField] [Range(1.3f, 5f)]
+    [SerializeField] [Range(1.3f, 10f)]
     private float yOffset;
 
-    [SerializeField] [Range(1.5f, 4f)]
+    [SerializeField] [Range(1.5f, 10f)]
     private float length;
 
-    [SerializeField] [Range(0.1f, 0.85f)]
+    [SerializeField] [Range(0.1f, 10f)]
     private float width;
 
     [Header ("References")]
